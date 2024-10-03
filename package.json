@@ -9,18 +9,23 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "react": "^18",
-    "react-dom": "^18",
-    "next": "14.2.13"
+    "@material-tailwind/react": "latest",
+    "flowbite": "^2.5.2",
+    "flowbite-react": "^0.10.2",
+    "next": "14.2.13",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^5.3.0"
   },
   "devDependencies": {
-    "typescript": "^5",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1",
     "eslint": "^8",
-    "eslint-config-next": "14.2.13"
+    "eslint-config-next": "14.2.13",
+    "gsmarena-api": "^2.0.5",
+    "postcss": "^8.4.24",
+    "tailwindcss": "^3.2.2",
+    "typescript": "^5.1.6"
   }
 }
