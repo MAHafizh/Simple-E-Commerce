@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
-import Navbar from "../navbar/Navbar";
-import Footer from "../footer/Footer";
+import Navbar from "../navbar";
+import Footer from "../footer";
 const Hero = () => {
   return (
     <>

@@ -1,5 +1,5 @@
 import React from "react";
-import { ProductCard } from "../card/Card";
+import Card from "../card";
 const URL = process.env.BASE_URL || "https://fakestoreapi.com/products";
 
 interface Iproducts {
@@ -30,7 +30,7 @@ const Products = async () => {
         <div className="gap-6 flex flex-wrap">
           {items.length > 0 ? (
             items.map((item) => (
-              <ProductCard
+              <Card
                 key={item.id}
                 name={item.title}
                 price={item.price}

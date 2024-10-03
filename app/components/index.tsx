@@ -1,0 +1,6 @@
+export { default as QuantitySelector } from './quantitySelector'
+export { default as Card } from './card'
+export { default as FlashSale } from './flashSale'
+export { default as Footer } from './footer'
+export { default as Navbar } from './navbar'
+export { default as Hero } from './hero'

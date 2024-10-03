@@ -1,30 +1,34 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
-import { Card } from "flowbite-react";
-
-
+import Link from "next/link";
 
 interface ProductsProps {
   name: string;
   source: string;
   price: number;
   rating?: number;
+  produkLink: string;
 }
 
 const formatPrice = (price: number): string => {
   return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 };
 
-export function ProductCard({
+const Card = ({
   name,
   price,
   source,
   rating = 0,
-}: ProductsProps) {
+  produkLink,
+}: ProductsProps) => {
   const renderStars = () => {
     const stars = [];
     const fullStars = Math.floor(rating);
-    const hasHalfStar = rating % 1 !== 0;
+    const decimalPart = rating - fullStars;
+    const hasHalfStar = decimalPart >= 0.5;
+    const totalStars = hasHalfStar ? fullStars + 1 : fullStars;
 
     // Add full stars
     for (let i = 0; i < fullStars; i++) {
@@ -57,7 +61,7 @@ export function ProductCard({
     }
 
     // Add empty stars
-    for (let i = stars.length; i < 5; i++) {
+    for (let i = totalStars; i < 5; i++) {
       stars.push(
         <svg
           key={`star-empty-${i}`}
@@ -75,32 +79,35 @@ export function ProductCard({
   };
 
   return (
-    <Card className="w-64 flex flex-col" imgAlt={name} imgSrc={source}>
-      <div className="flex-grow flex-col flex justify-between">
-          <a href="#">
-            <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
-              {name}
-            </h5>
-          </a>
-          <div className="mb-5 mt-2.5 flex items-center">
-            {renderStars()}
-            <span className="ml-3 mr-2 rounded bg-cyan-100 px-2.5 py-0.5 text-xs font-semibold text-cyan-800 dark:bg-cyan-200 dark:text-cyan-800">
-              {rating.toFixed(1)}
-            </span>
-          </div>
-        <div className="flex items-center justify-between mt-2">
-          <span className="text-lg font-bold text-gray-900 dark:text-white">
-            USD {price}
-            {/* Rp {formatPrice(price)} */}
-          </span>
-          <a
-            href="#"
-            className="rounded-lg bg-cyan-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-cyan-800 focus:outline-none focus:ring-4 focus:ring-cyan-300 dark:bg-cyan-600 dark:hover:bg-cyan-700 dark:focus:ring-cyan-800"
+    <Link href={produkLink} className="w-96 bg-white shadow-md rounded-lg overflow-hidden">
+      <div className="h-80">
+        {" "}
+        <img
+          src={source}
+          alt="card-image"
+          className="h-full w-full object-contain transition-transform duration-300 transform hover:scale-105"
+        />
+      </div>
+      {/* Content */}
+      <div className="p-4">
+        <div className="mb-2 flex flex-col">
+          <div
+            className="text-blue-gray font-medium whitespace-nowrap overflow-hidden text-ellipsis"
+            title={name}
           >
-            Add to cart
-          </a>
+            {name}
+          </div>
+          <div className="text-blue-gray font-bold">$ {price}</div>
+        </div>
+        <div className="flex items-center">
+          {renderStars()}
+          <span className="ml-3 mr-2 rounded bg-cyan-100 px-2.5 py-0.5 text-xs font-semibold text-cyan-800 dark:bg-cyan-200 dark:text-cyan-800">
+            {rating.toFixed(1)}
+          </span>
         </div>
       </div>
-    </Card>
+    </Link>
   );
 }
+
+export default Card;

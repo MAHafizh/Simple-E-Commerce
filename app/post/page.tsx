@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-key */
 import React from "react";
-import CardList from "../components/post/CardList";
+import CardList from "../components/post";
 import ViewUserButton from "../components/post/ViewUserButton";
 const base_url = "https://jsonplaceholder.typicode.com/posts";
 interface Ipost {

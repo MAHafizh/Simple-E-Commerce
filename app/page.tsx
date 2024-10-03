@@ -3,9 +3,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-import Navbar from "./components/navbar/Navbar";
-import Footer from "./components/footer/Footer";
-import Products from "./components/products/Products";
+import { Navbar, Footer, FlashSale } from "./components";
 
 import banner from "./assets/Frame 560.png";
 
@@ -69,7 +67,7 @@ const Home = () => {
         </div>
         <main className="mx-32">
           <div>
-            <Products />
+            <FlashSale />
           </div>
         </main>
         <Footer />
