@@ -1,6 +1,9 @@
+/* eslint-disable @next/next/no-img-element */
 import React from "react";
-import Card from "../card";
-const URL = process.env.BASE_URL || "https://fakestoreapi.com/products";
+
+import CardProduct from "../../cardProduct";
+
+const URL = "https://fakestoreapi.com/products?limit=4";
 
 interface Iproducts {
   id: number;
@@ -20,27 +23,21 @@ const Products = async () => {
   const items: Iproducts[] = await response.json();
   return (
     <>
-      <div className="flex items-center space-x-4">
-        <div className="bg-red-600 w-5 h-10 rounded-md"></div>
-        <h1 className="text-red-600 text-xl tracking-wider font-bold">
-          Flash Sale
-        </h1>
-      </div>
-      <div className="mt-4 mb-4 flex justify-center">
-        <div className="gap-6 flex flex-wrap">
+      <div className="mt-4 mb-4 flex">
+        <div className="gap-4 flex flex-wrap justify-center">
           {items.length > 0 ? (
             items.map((item) => (
-              <Card
+              <CardProduct
                 key={item.id}
-                name={item.title}
+                id={item.id}
+                title={item.title}
                 price={item.price}
-                source={item.image}
+                image={item.image}
                 rating={item.rating.rate}
-                produkLink={`/detail/${item.id}`}
               />
             ))
           ) : (
-            <p>No Product Available</p>
+            <p>No Product Found</p>
           )}
         </div>
       </div>

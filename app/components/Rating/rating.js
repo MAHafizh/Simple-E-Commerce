@@ -2,16 +2,16 @@
 import React, { useState } from "react";
 import { string, number, func, bool } from "prop-types";
 import defaultClasses from "./rating.module.css";
-import IconComponent from "../IconComponent/iconComponent";
+import IconComponent from "./IconComponent/iconComponent";
 
 const SIZES = {
   SMALL: {
     key: "s",
-    size: 10
+    size: 15
   },
   MEDIUM: {
     key: "m",
-    size: 18
+    size: 23
   },
   LARGE: {
     key: "l",
