@@ -12,3 +12,7 @@ export { default as InputProfile } from "./Account/inputProfile";
 export { default as InputAddress } from "./Account/inputAddress";
 export { default as CardAddress } from "./Account/cardAddress";
 export { default as ModalAddress } from "./Account/ModalAddress";
+export { default as ProductCard } from "./Checkout/productCard";
+export { default as ShippingCard } from "./Checkout/shippingCard";
+export { default as OrderCard } from "./Checkout/orderCard";
+export { default as AddressCard } from "./Checkout/addressCard";

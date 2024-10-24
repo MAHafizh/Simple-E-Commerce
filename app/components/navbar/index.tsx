@@ -37,7 +37,7 @@ const Navbar = () => {
           </div>
 
           <div>
-            <Link href="" className="px-4 py-2">
+            <Link href="/cart" className="px-4 py-2">
               Cart
             </Link>
             <Link href="/account" className="px-4 py-2">

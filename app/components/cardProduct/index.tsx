@@ -25,7 +25,7 @@ const CardProduct = ({ id, title, price, image, rating = 0 }: ProductsProps) => 
   return (
     <>
       <div
-        className="card card-compact bg-base-100 w-64 shadow-md cursor-pointer"
+        className="card card-compact bg-base-100 w-64 h-72 shadow-md cursor-pointer"
         onClick={handleClick}
       >
         <figure className="">
