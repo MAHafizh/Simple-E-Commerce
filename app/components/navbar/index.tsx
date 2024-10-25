@@ -5,7 +5,7 @@ import Link from "next/link"; // Import Link for navigation
 import { FiSearch } from "react-icons/fi";
 const Navbar = () => {
   return (
-    <nav className="border-b-2 border-gray pt-8 px-32 pb-4 sm:">
+    <nav className="border-b-2 border-gray pt-8 px-32 pb-4 w-[2000px] mx-auto">
       <div className="flex items-center justify-between">
         <div className="flex items-center">
           <p className="font-bold text-xl">Exclusive</p>

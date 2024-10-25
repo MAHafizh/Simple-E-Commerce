@@ -16,3 +16,6 @@ export { default as ProductCard } from "./Checkout/productCard";
 export { default as ShippingCard } from "./Checkout/shippingCard";
 export { default as OrderCard } from "./Checkout/orderCard";
 export { default as AddressCard } from "./Checkout/addressCard";
+export { default as CartCard } from "./Cart/mainCard";
+export { default as CartProductCard } from "./Cart/productCard";
+export { default as CartTotalPrice } from "./Cart/totalCard";

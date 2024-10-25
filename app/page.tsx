@@ -1,6 +1,5 @@
-"use client"; 
+"use client";
 import React from "react";
-import Link from "next/link";
 import Image from "next/image";
 
 import { Navbar, Footer, Products } from "./components";
@@ -15,25 +14,7 @@ const Home = () => {
       <div className="min-h-screen flex flex-col">
         <Navbar />
         <div className="flex flex-grow w-[1200px] h-[450px] mx-auto">
-          <aside className="w-1/4">
-            <div className="w-1/2 mt-8">
-              <ul>
-                <li>
-                  <Link href="#">Electronics</Link>
-                </li>
-                <li>
-                  <Link href="#">Electronics</Link>
-                </li>
-                <li>
-                  <Link href="#">Electronics</Link>
-                </li>
-                <li>
-                  <Link href="#">Electronics</Link>
-                </li>
-              </ul>
-            </div>
-          </aside>
-          <aside className="w-3/4 relative flex-grow h-96 mt-4">
+          <aside className="relative flex-grow h-96 mt-4">
             <Carousel indicators={false}>
               <div className="flex justify-center items-center">
                 <Image
